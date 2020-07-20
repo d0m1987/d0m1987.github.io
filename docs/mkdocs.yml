@@ -1,0 +1,69 @@
+site_name: Dominic Buehler
+site_description: Dominic Buehler Blog
+site_author: dbuehler
+site_url: https://d0m1987.github.io
+dev_addr: 0.0.0.0:8000
+
+repo_name: 'GitHub'
+repo_url: 'https://github.com/d0m1987/d0m1987.github.io'
+
+docs_dir: 'content'
+edit_uri: 'edit/source/docs/content/'
+
+# https://squidfunk.github.io/mkdocs-material/
+theme:
+  name: 'material'
+  custom_dir: 'theme'
+  language: en
+  include_sidebar: true
+  favicon: assets/img/favicon.png
+  logo: assets/img/favicon.png
+  feature:
+    tabs: false
+  palette:
+    primary: 'cyan'
+    accent: 'cyan'
+  i18n:
+    prev: 'Previous'
+    next: 'Next'
+
+copyright: "Copyright &copy; 2020 Dominic Buehler"
+
+extra_css:
+  - assets/styles/extra.css
+  - assets/styles/atom-one-light.css # HightlightJS's CSS theme
+
+extra_javascript:
+  - assets/js/hljs/highlight.pack.js # Download from https://highlightjs.org/download/ and enable YAML, TOML and Dockerfile
+  - assets/js/extra.js
+
+plugins:
+  - search
+  - exclude:
+      glob:
+        - "**/include-*.md"
+
+# https://squidfunk.github.io/mkdocs-material/extensions/admonition/
+# https://facelessuser.github.io/pymdown-extensions/
+markdown_extensions:
+  - attr_list
+  - admonition
+  - footnotes
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.highlight:
+      use_pygments: false # hljs is used instead of pygment for TOML highlighting support
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist
+  - pymdownx.snippets:
+      check_paths: true
+  - toc:
+      permalink: true
+
+# Page tree
+nav:
+  - 'Welcome': 'index.md'
+  - 'Blog Posts': 'Blog.md'
+  - 'Python':
+      - 'Comprehensions': 'python/Comprehensions.md'
